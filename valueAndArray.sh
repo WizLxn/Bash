@@ -23,3 +23,16 @@ echo ${greeting:1:4}
 #查找字符串
 echo `expr index "${greeting}" Ve`  #查找 V或e的位置
 
+
+
+###数组，下标从0开始，元素使用空格分割，可以单独定义数组的各个分量，并且可以不使用连续的下标，下标范围没有限制
+#定义数组的一般形式为： 数组名=(值1 值2 ... 值n)
+array_name=(${value} 34 "fewfw")
+array_name[5]="new value"
+echo ${array_name[5]}
+#使用@符号获取所有元素
+echo ${array_name[@]}
+
+echo ${#array_name[@]}   #获取数组元素个数
+echo ${#array_name[*]}   #获取数组元素个数
+echo ${#array_name[5]}   #获取单个元素的长度
